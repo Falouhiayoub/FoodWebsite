@@ -8,8 +8,6 @@
     --light-black: #666;
 }
 
-
-
 *{
     margin: 0;
     padding: 0;
@@ -249,6 +247,7 @@ nav ul li a.active {
     font-size: 2.5rem;
     color: #2e8b57;
     margin-bottom: 40px;
+    animation: fadeInUp 1.5s ease;
 }
 
 .category {
@@ -327,6 +326,7 @@ nav ul li a.active {
     font-size: 2.5rem;
     color: #2e8b57;
     margin-bottom: 15px;
+    animation: fadeInUp 1.5s ease;
 }
 
 .gallery p {
@@ -334,6 +334,7 @@ nav ul li a.active {
     font-size: 1.5rem;
     margin-bottom: 50px;
     font-weight: bold;
+    animation: fadeInUp 1.5s ease;
 }
 
 .gallery-grid {
@@ -386,7 +387,7 @@ nav ul li a.active {
 /* About page */
 .about-hero {
     height: 100vh;
-    background: url('https://images.unsplash.com/photo-1546069901-eacef0df6022?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1546069901-eacef0df6022?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -534,6 +535,32 @@ nav ul li a.active {
 .contact-info i {
     color: #2e8b57;
     margin-right: 10px;
+}
+
+.contact-text h1 {
+    font-size: 3rem;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+    animation: slideIn 1.5s ease forwards;
+}
+
+/* contact validation */
+#formMessage {
+    margin-top: 10px;
+    font-weight: 500;
+    display: none;
+}
+
+#formMessage.error {
+    color: #ff0000;
+    display: block;
+}
+
+#formMessage.success {
+    color: #2e8b57;
+    display: block;
 }
 
 .social-icons {
@@ -684,7 +711,7 @@ nav ul li a.active {
     }
 
     .hero p {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 }
 
@@ -692,7 +719,7 @@ nav ul li a.active {
 
 @media (max-width: 768px) {
     .menu .box-container {
-        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); /*autofit:Create as many columns as possible, 20rem:Each column should be at least 20rem wide, 1fr:Each column should take up an equal amount of space*/
     }
 }
 
@@ -775,13 +802,25 @@ header {
 
 /* Animations */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { 
+        opacity: 0; /*completely transparent*/
+        transform: translateY(40px); /*moved down by 40px (like it’s coming from below).*/
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
 }
 
 @keyframes slideUp {
-    from { opacity: 0; transform: translateY(60px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { 
+        opacity: 0; 
+        transform: translateY(60px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
 }
 
 /* Responsive */
@@ -797,10 +836,12 @@ header {
 }
 
 .contact-text h1 {
-    font-size: 2.2rem;
+    font-size: 2.7rem;
 }
 
 .contact-text p {
     font-size: 1.7rem;
 }
 }
+
+
