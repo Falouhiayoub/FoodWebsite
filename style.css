@@ -149,121 +149,6 @@ nav ul li a.active {
     margin: auto;
 }
 
-/* responsive header and hero section  */
-
-/* --- Animations --- */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* --- Responsive --- */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        padding: 15px 30px;
-    }
-
-    .hero h1 {
-        font-size: 2.2rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-}
-
-/* General Footer Styles */
-.site-footer {
-    background-color: #f7f6f2; /* Light background color from the image */
-    color: #384d34; /* Dark green/brown text color */
-    padding-top: 50px; /* Space above content */
-    font-family: Arial, sans-serif; /* Use a common, clean font */
-    font-size: 14px;
-}
-
-/* Main Content Wrapper (for the columns) */
-.footer-content {
-    display: flex; /* Enable Flexbox for column layout */
-    justify-content: space-around; /* Distribute columns evenly */
-    max-width: 1200px; /* Optional: Constrain width on large screens */
-    margin: 0 auto; /* Center the content */
-    padding: 0 20px 40px; /* Horizontal and bottom padding */
-    line-height: 1.8; /* Good spacing for readability */
-}
-
-/* Individual Column Styling */
-.footer-col {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    /* Adjust width if you don't use space-around */
-}
-
-.col-title {
-    font-size: 16px;
-    font-weight: bold; /* Make titles stand out */
-    margin-bottom: 5px;
-}
-
-/* Link Styling */
-.footer-col a, .footer-col p {
-    color: inherit; /* Inherit the main footer text color */
-    font-size: 15px;
-    text-decoration: none; /* Remove underline from links */
-    margin-bottom: 5px; /* Spacing between lines */
-    transition: color 0.2s;
-}
-
-.footer-col a:hover {
-    text-decoration: underline; /* Optional hover effect */
-}
-
-/* Social Icons Styling */
-.social-icons {
-    display: flex;
-    gap: 15px; /* Space between icons */
-    margin-top: 15px;
-    font-size: 18px; /* Size of the icons */
-}
-
-.social-icons a {
-    /* Style for your actual icons (e.g., Font Awesome) */
-    color: inherit; /* Use the footer's color */
-    text-decoration: none;
-    margin-bottom: 0; /* Remove line spacing from icon row */
-}
-
-/* Bottom Copyright Bar Styling */
-.footer-bottom {
-    background-color: #e6e6e8; /* The light purple/grey color */
-    padding: 15px 20px;
-    text-align: center;
-    border-top: 1px solid #dcdcdc; /* Subtle separator line */
-    font-size: 13px;
-}
-
-.footer-bottom a {
-    color: #384d34; /* Link color */
-    text-decoration: underline; /* Underline Wix link */
-}
-
 /* about page*/
 .about .row{
     display: flex;
@@ -350,11 +235,6 @@ nav ul li a.active {
     padding-top: 1rem;
     display: block; /* Ensure the price is on its own line */
 }
-@media (max-width: 768px) {
-    .menu .box-container {
-        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    }
-}
 
 /* weekly Menu section ends */
 
@@ -436,22 +316,6 @@ nav ul li a.active {
     padding: 10px 0 20px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        padding: 15px 30px;
-    }
-
-    .menu-section {
-        padding: 80px 20px;
-    }
-
-.menu-section h1 {
-    font-size: 2rem;
-}
-}
-
 /* Gallery section */
 /* Gallery Section */
 .gallery {
@@ -467,8 +331,9 @@ nav ul li a.active {
 
 .gallery p {
     color: #555;
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin-bottom: 50px;
+    font-weight: bold;
 }
 
 .gallery-grid {
@@ -514,22 +379,6 @@ nav ul li a.active {
 
 .gallery-item:hover::after {
     opacity: 1;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-header {
-    flex-direction: column;
-    padding: 15px 30px;
-}
-
-.gallery {
-    padding: 80px 20px;
-}
-
-.gallery h1 {
-    font-size: 2rem;
-}
 }
 
 /* Gallery Section end */
@@ -578,6 +427,311 @@ header {
     text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
 }
 
+
+/* Contact section */
+
+.contact-hero {
+    height: 140vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.4)) ,url(Gallery/backgroundImg.png) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+.contact-hero .overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.4);
+}
+
+.contact-text {
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 1.5s ease;
+}
+
+.contact-text h1 {
+    font-size: 5rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.contact-text p {
+    font-size: 2.5rem;
+    color: white;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 80px 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-container {
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    background: white;
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    animation: slideUp 1.5s ease;
+}
+
+.contact-form, .contact-info {
+    flex: 1;
+    min-width: 280px;
+}
+
+.contact-form h2,
+.contact-info h2 {
+    color: #2e8b57;
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    background-color: #2e8b57;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #66bb6a;
+}
+
+.contact-info p {
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+.contact-info i {
+    color: #2e8b57;
+    margin-right: 10px;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: #2e8b57;
+    font-size: 1.2rem;
+    margin-right: 15px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #66bb6a;
+    transform: scale(1.2);
+}
+
+/* Map Section */
+.map-container {
+    width: 100%;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.map-container h2 {
+    color: #2e8b57;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 400px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    animation: fadeIn 1.5s ease;
+}
+
+/* General Footer Styles */
+.site-footer {
+    background-color: #f7f6f2; /* Light background color from the image */
+    color: #384d34; /* Dark green/brown text color */
+    padding-top: 50px; /* Space above content */
+    font-family: Arial, sans-serif; /* Use a common, clean font */
+    font-size: 14px;
+}
+
+/* Main Content Wrapper (for the columns) */
+.footer-content {
+    display: flex; /* Enable Flexbox for column layout */
+    justify-content: space-around; /* Distribute columns evenly */
+    max-width: 1200px; /* Optional: Constrain width on large screens */
+    margin: 0 auto; /* Center the content */
+    padding: 0 20px 40px; /* Horizontal and bottom padding */
+    line-height: 1.8; /* Good spacing for readability */
+}
+
+/* Individual Column Styling */
+.footer-col {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    /* Adjust width if you don't use space-around */
+}
+
+.col-title {
+    font-size: 16px;
+    font-weight: bold; /* Make titles stand out */
+    margin-bottom: 5px;
+}
+
+/* Link Styling */
+.footer-col a, .footer-col p {
+    color: inherit; /* Inherit the main footer text color */
+    font-size: 15px;
+    text-decoration: none; /* Remove underline from links */
+    margin-bottom: 5px; /* Spacing between lines */
+    transition: color 0.2s;
+}
+
+.footer-col a:hover {
+    text-decoration: underline; /* Optional hover effect */
+}
+
+/* Social Icons Styling */
+.social-icons {
+    display: flex;
+    gap: 15px; /* Space between icons */
+    margin-top: 15px;
+    font-size: 18px; /* Size of the icons */
+}
+
+.social-icons a {
+    /* Style for your actual icons (e.g., Font Awesome) */
+    color: inherit; /* Use the footer's color */
+    text-decoration: none;
+    margin-bottom: 0; /* Remove line spacing from icon row */
+}
+
+/* Bottom Copyright Bar Styling */
+.footer-bottom {
+    background-color: #e6e6e8; /* The light purple/grey color */
+    padding: 15px 20px;
+    text-align: center;
+    border-top: 1px solid #dcdcdc; /* Subtle separator line */
+    font-size: 13px;
+}
+
+.footer-bottom a {
+    color: #384d34; /* Link color */
+    text-decoration: underline; /* Underline Wix link */
+}
+
+/* responsive header and hero section  */
+
+/* --- Animations --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0; 
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px 30px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+/* weekly Maneu responsive */
+
+@media (max-width: 768px) {
+    .menu .box-container {
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    }
+}
+
+/* Menu section responsive */
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px 30px;
+    }
+
+    .menu-section {
+        padding: 80px 20px;
+    }
+
+.menu-section h1 {
+    font-size: 2rem;
+}
+}
+
+/* gallery responsive */
+@media (max-width: 768px) {
+header {
+    flex-direction: column;
+    padding: 15px 30px;
+}
+
+.gallery {
+    padding: 80px 20px;
+}
+
+.gallery h1 {
+    font-size: 2rem;
+}
+}
+
+/* about section responsive and animation */
+
 /* Animations */
 @keyframes fadeInUp {
     from {
@@ -617,127 +771,7 @@ header {
 }
 }
 
-
-/* Contact section */
-
-.contact-hero {
-    height: 70vh;
-    background: url('https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    text-align: center;
-    color: white;
-    margin-top: 80px;
-}
-
-.contact-hero .overlay {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.4);
-}
-
-.contact-text {
-    position: relative;
-    z-index: 1;
-    animation: fadeIn 1.5s ease;
-}
-
-.contact-text h1 {
-    font-size: 5rem;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-}
-
-.contact-text p {
-    font-size: 2.5rem;
-    text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
-}
-
-/* Contact Section */
-.contact-section {
-    padding: 80px 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.contact-container {
-    display: flex;
-    gap: 60px;
-    flex-wrap: wrap;
-    max-width: 1100px;
-    background: white;
-    border-radius: 20px;
-    padding: 50px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    animation: slideUp 1.5s ease;
-}
-
-.contact-form, .contact-info {
-    flex: 1;
-    min-width: 280px;
-}
-
-.contact-form h2,
-.contact-info h2 {
-    color: #2e8b57;
-    margin-bottom: 20px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
-}
-
-.contact-form button {
-    background-color: #2e8b57;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.contact-form button:hover {
-    background-color: #66bb6a;
-}
-
-.contact-info p {
-    margin: 10px 0;
-    font-size: 1rem;
-}
-
-.contact-info i {
-    color: #2e8b57;
-    margin-right: 10px;
-}
-
-.social-icons {
-    margin-top: 20px;
-}
-
-.social-icons a {
-    color: #2e8b57;
-    font-size: 1.2rem;
-    margin-right: 15px;
-    transition: transform 0.3s, color 0.3s;
-}
-
-.social-icons a:hover {
-    color: #66bb6a;
-    transform: scale(1.2);
-}
+/* Contact responsive */
 
 /* Animations */
 @keyframes fadeIn {
@@ -767,6 +801,6 @@ header {
 }
 
 .contact-text p {
-    font-size: 1rem;
+    font-size: 1.7rem;
 }
 }
